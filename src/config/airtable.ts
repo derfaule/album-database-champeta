@@ -10,6 +10,6 @@ export const getAirtableUrl = () =>
   `${AIRTABLE_CONFIG.API_URL}/${AIRTABLE_CONFIG.BASE_ID}/${AIRTABLE_CONFIG.TABLE_NAME}`;
 
 export const getHeaders = () => ({
-  'Authorization': `Bearer ${AIRTABLE_CONFIG.API_KEY}`,
+  'Authorization': `Bearer ${AIRTABLE_CONFIG.accessToken}`,
   'Content-Type': 'application/json'
 });
