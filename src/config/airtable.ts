@@ -1,8 +1,8 @@
 // Airtable Configuration
 export const AIRTABLE_CONFIG = {
   BASE_ID: 'appVYEMXc3C7Qc32u', // Replace with your Airtable Base ID
-  API_KEY: 'patVKKpTTPwGejb4S', // Replace with your Airtable API Key
-  TABLE_NAME: 'Imported table', // Replace with your table name if different
+  accessToken: 'patVKKpTTPwGejb4S', // New PAT format
+  TABLE_NAME: 'Imported_table', // Replace with your table name if different
   API_URL: `https://api.airtable.com/v0`
 };
 
