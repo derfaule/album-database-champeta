@@ -1,12 +1,12 @@
-import { Imported table } from '../types';
+import { Albums } from '../types';
 import { getAirtableUrl, getHeaders } from '../config/airtable';
 
 class AirtableService {
-  private cache: Imported table[] | null = null;
+  private cache: Albums[] | null = null;
   private lastFetch: number = 0;
   private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-  async fetchImported table(forceRefresh: boolean = false): Promise<Imported table[]> {
+  async fetchImported table(forceRefresh: boolean = false): Promise<Albums[]> {
     const now = Date.now();
     
     // Return cached data if it's fresh and not forcing refresh
