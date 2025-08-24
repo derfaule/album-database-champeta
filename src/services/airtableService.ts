@@ -6,7 +6,7 @@ class AirtableService {
   private lastFetch: number = 0;
   private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-  async fetchImported table(forceRefresh: boolean = false): Promise<Album[]> {
+  async fetchAlbums(forceRefresh: boolean = false): Promise<Album[]> {
     const now = Date.now();
     
     // Return cached data if it's fresh and not forcing refresh

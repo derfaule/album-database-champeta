@@ -20,12 +20,18 @@ A modern, responsive website that displays album data from an Airtable database 
    - Navigate to your base containing album data
    - Go to the API documentation: `https://airtable.com/{BASE_ID}/api/docs`
    - Copy your Base ID from the URL or API docs
-   - Get your API key from your [Account settings](https://airtable.com/account)
+   - Create a Personal Access Token (PAT):
+     - Go to [Developer Hub](https://airtable.com/create/tokens)
+     - Click "Create new token"
+     - Give it a name (e.g., "Album Collection Website")
+     - Add the following scopes: `data.records:read`
+     - Add access to your specific base
+     - Copy the generated token
 
 2. **Configure the application**:
    - Open `src/config/airtable.ts`
    - Replace `YOUR_BASE_ID_HERE` with your actual Airtable Base ID
-   - Replace `YOUR_API_KEY_HERE` with your actual Airtable API Key
+   - Replace `YOUR_PAT_HERE` with your actual Personal Access Token
    - Update `TABLE_NAME` if your table has a different name than "Albums"
 
 ### 2. Airtable Table Structure
@@ -86,9 +92,10 @@ The site is a static React application that can be deployed to any hosting servi
 ### Common Issues
 
 1. **"Unable to Load Albums" error**:
-   - Check your Airtable Base ID and API Key in `src/config/airtable.ts`
+   - Check your Airtable Base ID and Personal Access Token in `src/config/airtable.ts`
    - Ensure your Airtable base is accessible
    - Verify the table name matches your configuration
+   - Make sure your PAT has the correct scopes (`data.records:read`) and base access
 
 2. **Images not loading**:
    - Make sure the "Cover Image" field in Airtable contains valid image files
