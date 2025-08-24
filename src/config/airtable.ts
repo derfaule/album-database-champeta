@@ -5,7 +5,7 @@ export const AIRTABLE_CONFIG = {
   TABLE_NAME: 'Imported_table', // Replace with your table name if different
   API_URL: `https://api.airtable.com/v0`
 };
-
+patVKKpTTPwGejb4S
 export const getAirtableUrl = () => 
   `${AIRTABLE_CONFIG.API_URL}/${AIRTABLE_CONFIG.BASE_ID}/${AIRTABLE_CONFIG.TABLE_NAME}`;
 
