@@ -26,7 +26,9 @@ const AlbumGrid: React.FC = () => {
       const data = await airtableService.fetchAlbums(forceRefresh);
       setAlbums(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load albums');
+      console.error('Album loading error:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Failed to load albums';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -112,10 +114,11 @@ const AlbumGrid: React.FC = () => {
             <div className="space-y-2 text-sm text-red-300">
               <p>Please check your Airtable configuration:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Verify your Base ID in <code>src/config/airtable.ts</code></li>
-                <li>Verify your API Key in <code>src/config/airtable.ts</code></li>
+                <li>Verify your Base ID: <code>appVYEMXc3C7Qc32u</code></li>
+                <li>Add your Personal Access Token (PAT) in <code>src/config/airtable.ts</code></li>
                 <li>Ensure your table name matches the configuration</li>
                 <li>Check that your Airtable base is accessible</li>
+                <li>Verify your PAT has <code>data.records:read</code> scope</li>
               </ul>
             </div>
             <button
